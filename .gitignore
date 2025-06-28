@@ -1,0 +1,18 @@
+# Node
+node_modules/
+.env
+dist/
+build/
+*.log
+
+# OS
+.DS_Store
+
+# Vite / React
+client/dist
+
+# TypeScript
+*.tsbuildinfo
+
+# Postgres (Docker)
+pgdata/
