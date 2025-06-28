@@ -1,124 +1,166 @@
-🗺️ Territory.io
+# 🗺️ Territory.io
+
 Territory.io is a web-based platform for B2B sales teams to visualize, assign, and manage sales territories on an interactive map. Teams can draw freeform territories, collaborate in groups with permission controls, and tag business data on the map using public and private sources.
 
-🚀 Tech Stack
-Layer Technology
-Frontend React.js, TypeScript, Vite, Tailwind CSS, Leaflet
-Backend Node.js, Express.js, TypeScript
-Database PostgreSQL + PostGIS
-APIs OpenStreetMap (Overpass), Yelp/Foursquare (optional)
-Deployment Docker (PostGIS), GitHub, (optionally Vercel/Render)
+---
 
-📦 Project Structure
-bash
-Copy
-Edit
+## 🚀 Tech Stack
+
+| Layer      | Technology                                           |
+| ---------- | ---------------------------------------------------- |
+| Frontend   | React.js, TypeScript, Vite, Tailwind CSS, Leaflet    |
+| Backend    | Node.js, Express.js, TypeScript                      |
+| Database   | PostgreSQL + PostGIS                                 |
+| APIs       | OpenStreetMap (Overpass), Yelp/Foursquare (optional) |
+| Deployment | Docker (PostGIS), GitHub, (Vercel/Render optional)   |
+
+---
+
+## 📦 Project Structure
+
+```bash
 territory-io/
-├── client/ # React frontend (Vite)
-├── server/ # Node + Express backend
-├── docker-compose.yml # Postgres + PostGIS container
+├── client/             # React frontend (Vite)
+├── server/             # Node + Express backend
+├── docker-compose.yml  # Postgres + PostGIS container
 ├── README.md
 └── .gitignore
-🧪 Features (MVP Scope)
-User authentication (login/signup)
+```
 
-Group creation & hierarchy (admin/member roles)
+---
 
-Draw, color, and assign custom territories
+## 🧪 Features (MVP Scope)
 
-Load business data from APIs (passive)
+- User authentication (login/signup)
 
-Add private/group-visible custom POIs
+- Group creation & hierarchy (admin/member roles)
 
-View POIs only within current territory & zoom level
+- Draw, color, and assign custom territories
 
-⚙️ Getting Started
+- Load business data from APIs (passive)
 
-1. Clone the Repo
-   bash
-   Copy
-   Edit
-   git clone https://github.com/your-username/territory-io.git
-   cd territory-io
-2. Set Up Database (PostGIS)
-   Start PostgreSQL with PostGIS using Docker:
+- Add private/group-visible custom POIs
 
-bash
+- View POIs only within current territory & zoom level
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repo
+
+```bash
 Copy
 Edit
+git clone https://github.com/your-username/territory-io.git
+cd territory-io
+```
+
+### 2. Set Up Database (PostGIS)
+
+#### Start PostgreSQL with PostGIS using Docker:
+
+```bash
 docker compose up -d
-Default DB config (from .env):
+```
 
-host: localhost
+#### Default DB config (from .env):
 
-port: 5432
+- host: localhost
 
-user: postgres
+- port: 5432
 
-password: password
+- user: postgres
 
-db: territory
+- password: password
 
-You can update the credentials in server/.env
+- db: territory
 
-3. Start Backend
-   bash
-   Copy
-   Edit
-   cd server
-   npm install
-   npm run dev
-   .env example:
+##### You can update the credentials in server/.env
 
-ini
-Copy
-Edit
+### 3. Start Backend
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+#### .env example:
+
+```env
 DATABASE_URL=postgresql://postgres:password@localhost:5432/territory
-PORT=4000 4. Start Frontend
-bash
-Copy
-Edit
+PORT=4000
+```
+
+### 4. Start Frontend
+
+```bash
 cd ../client
 npm install
 npm run dev
-🗂️ Folder Highlights
-client/src:
+```
 
-/components → UI Components (MapView, TerritoryEditor, POIMarkers)
+---
 
-/features → auth, map, groups
+## 🗂️ Folder Highlights
 
-/pages → route-level views
+#### client/src:
 
-/contexts → Auth & Group context providers
+- /components → UI Components (MapView, TerritoryEditor, POIMarkers)
 
-server/src:
+- /features → auth, map, groups
 
-index.ts → Express entry point
+- /pages → route-level views
 
-routes/ → API routes (/auth, /groups, /territories, /pois)
+- /contexts → Auth & Group context providers
 
-db.ts → PostgreSQL pool config
+#### server/src:
 
-controllers/ → Request handlers
+- index.ts → Express entry point
 
-models/ → SQL layer & queries
+- routes/ → API routes (/auth, /groups, /territories, /pois)
 
-📌 Development Notes
-Use PostGIS for all geographic queries (bbox, ST_Intersects, etc.)
+- db.ts → PostgreSQL pool config
 
-Redis cache recommended for high-volume POI requests by viewport
+- controllers/ → Request handlers
 
-Data displayed based on bounding box and zoom to improve performance
+- models/ → SQL layer & queries
 
-🛣️ Roadmap
-Add OAuth2 login (Google or SSO)
+---
 
-Add map filters (industry, size, tags)
+## 📌 Development Notes
 
-Export territory boundaries as GeoJSON/CSV
+- Use PostGIS for all geographic queries (bbox, ST_Intersects, etc.)
 
-Team analytics dashboard
+- Redis cache recommended for high-volume POI requests by viewport
 
-📄 License
+- Data displayed based on bounding box and zoom to improve performance
+
+---
+
+## 🛣️ Roadmap
+
+- Add OAuth2 login (Google or SSO)
+
+- Add map filters (industry, size, tags)
+
+- Export territory boundaries as GeoJSON/CSV
+
+* Team analytics dashboard
+
+## 📄 License
+
 MIT © 2025 Territory.io
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
