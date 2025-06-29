@@ -14,3 +14,10 @@ app.get("/", (req, res) => {
 app.listen(4000, () => {
   console.log("Server running on http://localhost:4000");
 });
+
+// Specify a port number for the server
+const port = 5000;
+// Start the server and listen to the port
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
