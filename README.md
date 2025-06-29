@@ -72,11 +72,12 @@ docker compose up -d
 
 - user: postgres
 
-- password: password
+- password: <YOUR_STRONG_PASSWORD>
 
 - db: territory
 
 ##### You can update the credentials in server/.env
+##### ⚠️ WARNING: Always change default credentials before any deployment to protect your database from unauthorized access
 
 ### 3. Start Backend
 
@@ -89,7 +90,7 @@ npm run dev
 #### .env example:
 
 ```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/territory
+DATABASE_URL=postgresql://postgres:<YOUR_STRONG_PASSWORD>@localhost:5432/territory
 PORT=4000
 ```
 
