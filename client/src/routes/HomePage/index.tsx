@@ -1,15 +1,15 @@
 import React from "react";
 import { isLoggedIn } from "../../utils/isLoggedIn";
 import { Navigate } from "react-router-dom";
+import { isGrouped } from "../../utils/isGrouped"; // Assuming this utility checks if the user is part of a group/team
+import Grouper from "./components/Grouper"; // Import the Grouper component
 
 const Home: React.FC = () => {
   // if user is not logged in, redirect to login page
   // if user is logged in, display the home page content
-  return isLoggedIn() ? (
+  return isLoggedIn() && !isGrouped() ? (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the home page of the application.</p>
-      {/* You can add more components or content here */}
+      <Grouper />
     </div>
   ) : (
     <Navigate to="/login" />

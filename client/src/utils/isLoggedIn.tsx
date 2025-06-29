@@ -5,7 +5,7 @@ export function isLoggedIn(): boolean {
   // return !!token; // Returns true if token exists, false otherwise
 
   // force state for testing purposes
-  return false;
+  return true;
 }
 
 /*
