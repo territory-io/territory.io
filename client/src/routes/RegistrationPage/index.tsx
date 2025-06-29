@@ -3,30 +3,29 @@
 import React from "react";
 // import Button from "../../components/button";
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   return (
     // if user is not logged in, redirect to login page
     // if user is logged in, display the home page content
     <div>
-      <h1>Welcome to the Login Page</h1>
-      <p>This is the Login page of the application.</p>
+      <h1>Welcome to the Register Page</h1>
+      <p>This is the Register page of the application.</p>
       {/* You can add more components or content here */}
     </div>
 
     /*
-    build a login form with email, and password fields
+    build a registration form with email, name, and password / re-type password fields
     needs to: 
     - validate email and password
     - submit the form to the server
-    - handle errors and display messages
-    - redirect to the home page on successful login (if user is not a member of a group/team, redirect to a page for creating/joining a group/team) (they should not be able to access the main page without being a member of a group/team)
-    - option to register a new account if the user does not have an account
+    - handle errors and display messages (e.g., email already exists, password too short, etc.)
+    - redirect to the login page on successful registration
+   
     - (until the api is ready, use a mock api where registration and login are pushed into a local seed data file) then we can use the mock api to test the login and registration functionality
-    - add a button to switch to the registration page
     - add a button to switch to the login page if the user is on the registration page
     
     */
   );
 };
 
-export default Login;
+export default Register;
