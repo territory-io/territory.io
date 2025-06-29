@@ -1,7 +1,7 @@
 // Login page structure with a form for email and password, and a button to submit the form.
 // give user option to login or register
 import React from "react";
-import Button from "../../components/button";
+// import Button from "../../components/button";
 
 const Login: React.FC = () => {
   return (
