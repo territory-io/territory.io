@@ -7,6 +7,7 @@ import Login from "./routes/LoginPage";
 import Register from "./routes/RegistrationPage";
 import "./styles/App.css";
 import "./styles/index.css";
+import { isLoggedIn } from "./utils/isLoggedIn";
 
 const App: React.FC = () => {
   return (
@@ -14,17 +15,19 @@ const App: React.FC = () => {
       <nav className="app-nav">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/main">Map</Link>
           </li>
-          <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
+          {/* Conditionally render Login and Register links based on login status */}
+          {!isLoggedIn() ? (
+            <>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            </>
+          ) : null}
         </ul>
       </nav>
       <Routes>
