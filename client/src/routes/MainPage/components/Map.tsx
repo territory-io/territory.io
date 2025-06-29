@@ -1,8 +1,9 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L, { map, type LocationEvent } from "leaflet";
-import React, { useEffect } from "react";
+import L, { type LocationEvent } from "leaflet";
+import { useEffect } from "react";
 
+// function for displaying the user's current location on the map
 function LocationMarker() {
   const map = useMap();
 
