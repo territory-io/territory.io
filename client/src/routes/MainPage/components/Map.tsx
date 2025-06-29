@@ -10,7 +10,7 @@ function LocationMarker() {
   useEffect(() => {
     function onLocationFound(e: LocationEvent) {
       const radius = e.accuracy;
-      L.marker(e.latlng).addTo(map).bindPopup(`You are here.`).openPopup();
+      // L.marker(e.latlng).addTo(map).bindPopup(`You are here.`).openPopup();
       L.circle(e.latlng, { radius }).addTo(map);
     }
 
@@ -35,7 +35,7 @@ export default function Map() {
   return (
     <MapContainer
       center={[51.505, -0.09]}
-      zoom={13}
+      zoom={16}
       scrollWheelZoom={true}
       style={{ height: "100vh", width: "100%" }}
     >

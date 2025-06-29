@@ -1,31 +1,75 @@
 // Login page structure with a form for email and password, and a button to submit the form.
 // give user option to login or register
 import React from "react";
+import { useForm } from "react-hook-form";
 // import Button from "../../components/button";
 
-const Login: React.FC = () => {
-  return (
-    // if user is not logged in, redirect to login page
-    // if user is logged in, display the home page content
-    <div>
-      <h1>Welcome to the Login Page</h1>
-      <p>This is the Login page of the application.</p>
-      {/* You can add more components or content here */}
-    </div>
+interface UserLoginValues {
+  email: string;
+  password: string;
+}
 
-    /*
-    build a login form with email, and password fields
-    needs to: 
-    - validate email and password
-    - submit the form to the server
-    - handle errors and display messages
-    - redirect to the home page on successful login (if user is not a member of a group/team, redirect to a page for creating/joining a group/team) (they should not be able to access the main page without being a member of a group/team)
-    - option to register a new account if the user does not have an account
-    - (until the api is ready, use a mock api where registration and login are pushed into a local seed data file) then we can use the mock api to test the login and registration functionality
-    - add a button to switch to the registration page
-    - add a button to switch to the login page if the user is on the registration page
-    
-    */
+const Login: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserLoginValues>();
+
+  const onSubmit = async (data: UserLoginValues) => {
+    try {
+      // Replace with your actual API endpoint
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        // Handle invalid credentials or server errors
+        const errorData = await response.json();
+        alert(errorData.message || "Login failed");
+        return;
+      }
+
+      // Handle successful login (e.g., save token, redirect)
+      const result = await response.json();
+      alert("Login successful!");
+      // Example: localStorage.setItem("token", result.token);
+      // Redirect user or update app state here
+    } catch (error) {
+      alert("An error occurred during login.");
+    }
+  };
+
+  return (
+    <div>
+      <h1>Log In</h1>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            {...register("email", { required: "Email is required" })}
+          />
+          {errors.email && <span>{errors.email.message}</span>}
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            id="password"
+            type="password"
+            {...register("password", { required: "Password is required" })}
+          />
+          {errors.password && <span>{errors.password.message}</span>}
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
