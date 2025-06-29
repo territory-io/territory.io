@@ -5,18 +5,15 @@ import Home from "./routes/HomePage";
 import MainPage from "./routes/MainPage";
 import Login from "./routes/LoginPage";
 import Register from "./routes/RegistrationPage";
+import { isLoggedIn } from "./utils/isLoggedIn";
 import "./styles/App.css";
 import "./styles/index.css";
-import { isLoggedIn } from "./utils/isLoggedIn";
 
 const App: React.FC = () => {
   return (
     <Router>
       <nav className="app-nav">
         <ul>
-          <li>
-            <Link to="/main">Map</Link>
-          </li>
           {/* Conditionally render Login and Register links based on login status */}
           {!isLoggedIn() ? (
             <>
@@ -27,15 +24,18 @@ const App: React.FC = () => {
                 <Link to="/register">Register</Link>
               </li>
             </>
-          ) : null}
+          ) : (
+            <li>
+              <Link to="/map">Map</Link>
+            </li>
+          )}
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/map" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* Add more routes for other views */}
       </Routes>
     </Router>
   );
