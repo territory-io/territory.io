@@ -2,7 +2,7 @@
 // checks the db table of group_members to see if the user.id matches any of the group_members.user_id
 // if it does, return true, else return false
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // import { getGroupMembers } from "../api/groupMembersApi"; // Adjust the import path as necessary
 
 // export const isGrouped = async (userId: string): Promise<boolean> => {
