@@ -58,13 +58,22 @@ cd territory-io
 
 ### 2. Set Up Database (PostGIS)
 
+#### Create a .env file in the root directory:
+
+Copy the .env.example file and set your secure database password:
+
+```bash
+cp .env.example .env
+# Edit the .env file to set a secure password
+```
+
 #### Start PostgreSQL with PostGIS using Docker:
 
 ```bash
 docker compose up -d
 ```
 
-#### Default DB config (from .env):
+#### Default DB config:
 
 - host: localhost
 
@@ -72,9 +81,9 @@ docker compose up -d
 
 - user: postgres
 
-- password: password
+- password: (set in your .env file as SUPABASE_PASSKEY)
 
-- db: territory
+- db: postgres
 
 ##### You can update the credentials in server/.env
 
@@ -86,10 +95,10 @@ npm install
 npm run dev
 ```
 
-#### .env example:
+#### server/.env example:
 
 ```env
-DATABASE_URL=postgresql://postgres:password@localhost:5432/territory
+DATABASE_URL=postgresql://postgres:${SUPABASE_PASSKEY}@localhost:5432/postgres
 PORT=4000
 ```
 
