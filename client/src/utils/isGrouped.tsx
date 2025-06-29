@@ -40,5 +40,5 @@
 export function isGrouped(): boolean {
   // Force state for testing purposes
   // In a real application, you would check the user's group membership from the database or API
-  return false;
+  return true;
 }
