@@ -7,7 +7,7 @@
 <g transform="matrix(1 0 0 1 640 512)" id="background-logo"  >
 <rect style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-opacity: 0; fill-rule: nonzero; opacity: 1;"  paint-order="stroke"  x="-640" y="-512" rx="0" ry="0" width="1280" height="1024" />
 </g>
-<g transform="matrix(1.9211538461538462 0 0 1.9211538461538462 639.6388808559861 511.87618772205246)" id="logo-logo"  >
+<g transform="matrix(4.714437695016253 0 0 4.714437695016253 639.6388808559863 511.8761877220526)" id="logo-logo"  >
 <g style=""  paint-order="stroke"   >
 		<g transform="matrix(0.31008162354293234 0 0 0.3100816235429324 1.3821302204548829 39.46059755856902)"  >
 <polygon style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(217,217,216); fill-rule: nonzero; opacity: 1;"  paint-order="stroke"  points="-55.38188750000006,-195.80300085 27.41996180000001,-164.38456844999996 99.45690519999994,-167.56328105 122.15442159999998,-155.26269155 189.73323010000001,-116.29501124999996 380.40189999999996,-152.36839575 250.21957049999992,160.18097035000005 51.2562868,195.80300085 -207.75457520000003,72.93621625000003 -380.40190000000007,102.55720235000001 -204.59010560000002,-155.88359084999996 -55.38188750000006,-195.80300085 " />
